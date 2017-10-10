@@ -1,0 +1,41 @@
+<h1>
+    <i class="fa fa-terminal">   </i>
+     Sandbox Mod
+    <i class="fa fa-times pull-right close-button" close-all-ui></i>
+</h1>
+
+
+<div class="padding">
+    <h4>Hello this is Sandbox mode. From this menu you will be able to do many things such as give yourself money or more!</h4>
+
+<div class="padding" style="overflow: auto; height: 490px;">
+<h3> </h3>
+    <h4><i class="fa fa-money"></i> Money</h5>
+    <p><button ng-click="sandboxCtrl.giveMoney(10000)">Add $10.000</button>
+    <button ng-click="sandboxCtrl.giveMoney(500000)">Add $500.000</button>
+    <button ng-click="sandboxCtrl.giveMoney(1000000)">Add $1.000.000</button>
+    <button ng-click="sandboxCtrl.giveMoney(1000000000)">Add $1.000.000.000</button>
+
+   <h4><i class="fa fa-book"></i> Experience</h5>
+    <p><button ng-click="sandboxCtrl.giveXP(1000)">Add 1,000 XP</button>
+    <button ng-click="sandboxCtrl.giveXP(10000)">Add 10,000 XP</button>
+    <button ng-click="sandboxCtrl.giveMaxTire()">Get max tire (XP)</button>
+
+<h4><i class="fa fa-calendar"></i> Days</h5>
+  <small>Be careful! Skipping too many days might crash the game. Do this at your own risk.</small>
+    <p><button ng-click="sandboxCtrl.NextDay()">Skip one day</button>
+
+<h4><i class="fa fa-beer"></i> Projects</h5>
+  <p><button ng-click="sandboxCtrl.Hype()">Add 100% hype to all your projects</button>
+    <button ng-click="sandboxCtrl.addUsers()">Add 500000 users to your project</button>
+
+
+    <h4><i class="fa fa-archive"></i> Inventory</h5>
+      <p><button ng-click="sandboxCtrl.InventoryGive()">Add 100 items of every item.</button>
+
+        <h4><i class="fa fa-user"></i> Workers</h5>
+          <p><button class="cancel" >Force workers to work 1000% better.</button> <!-- ng-click="sandboxCtrl.WorkHard()" -->
+            <button ng-click="sandboxCtrl.GoodMood()">Keep your workes at 100% mood.</button>
+
+</div>
+</div>
