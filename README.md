@@ -1,7 +1,7 @@
 # Sandbox-mod
 [Sandbox mod](http://steamcommunity.com/sharedfiles/filedetails/?id=1109753463 "Sandbox mod on steam") for [Startup company](http://store.steampowered.com/app/606800 "Startup Company on steam").
 
-Help fix issues if you know how to here, and help the mod develop even more. If you hel with the mod you will be added to the credits.
+Help fix issues if you know how to here, and help the mod develop even more. If you help with the mod you will be added to the credits.
 
 ## Contributing
 
