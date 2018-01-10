@@ -1,30 +1,10 @@
 let _modPath;
 
+// Let's set rs as the god, GetRootScope()
+const rs = GetRootScope();
+
 // This is for opening the mod link in-game.
 GetRootScope().OpenMod = () => Remote.app.openLink('http://steamcommunity.com/sharedfiles/filedetails/stats/1109753463');
-
-// I forgot what this does.
-const SettingsHelper = {
-    getValueOrDefault: (settings, key, defaultEntry) => {
-        if(!settings.sandbox) {
-            settings.sandbox = {};
-        }
-
-        if(!settings.sandbox[key]){
-            settings.sandbox[key] = defaultEntry;
-        }
-
-        return settings.sandbox[key];
-
-    },
-    setValue: (settings, key, value) => {
-        if(!settings.sandbox) {
-            settings.sandbox = {};
-        }
-
-        settings.sandbox[key] = value;
-    }
-};
 
 // THis says the mod loaded in console.
 Helpers.ConsoleInfo('[MOD] Sandbox: Helper loaded!');
@@ -33,7 +13,7 @@ Helpers.ConsoleInfo('[MOD] Sandbox: Helper loaded!');
 exports.initialize = (modPath) =>{
     _modPath = modPath;
     // Add a framework
-    Frameworks.push(
+    /*Frameworks.push(
       {
         cuPerMs: 0.1,
         licenseCost: 0,
@@ -42,7 +22,7 @@ exports.initialize = (modPath) =>{
         pricePerUser: 1
       }
     );
-    Helpers.ConsoleInfo('[MOD] Sandbox: Pal framework loaded!');
+    Helpers.ConsoleInfo('[MOD] Sandbox: Pal framework loaded!');*/
 
     // Add new menu item
     Modding.setMenuItem({
@@ -94,7 +74,8 @@ exports.initialize = (modPath) =>{
         this.InventoryGive = () => {
           $rootScope.confirm('Are you sure?', `Are you sure you want to add 500 items of every item.`, () => {
             Components.forEach(t=>{
-              GetRootScope().settings.inventory[t.name] += 500
+              if(GetRootScope().settings.inventory[t.name] > 0)
+                GetRootScope().settings.inventory[t.name] += 500
             })
             $rootScope.addNotification("Added 500 of every item to your inventory.", 1);
           }
@@ -107,9 +88,9 @@ exports.initialize = (modPath) =>{
 };
 
 Helpers.ConsoleInfo('[MOD] Sandbox: Menu loaded!');
-exports.onLoadGame = settings => {};
-exports.onNewHour = settings => {};
-exports.onNewDay = settings => {};
+// exports.onLoadGame = settings => {};
+// exports.onNewHour = settings => {};
+// exports.onNewDay = settings => {};
 exports.onUnsubscribe = done => {
   Helpers.ConsoleInfo(`[MOD] Sandbox: User has just unsubscribed from this mod... :( `);
   done();
