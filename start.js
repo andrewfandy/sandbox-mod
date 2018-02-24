@@ -48,6 +48,17 @@ exports.initialize = (modPath) => {
 				});
 			}
 
+			this.giveMoreUsers = (product_id, amount) => {
+				$rootScope.confirm('Are you sure?', `Are you sure you want give yourself ${(amount)} of users?`, () => {
+						for (var key in GetRootScope().settings.progress.products) {
+							console.log(key)
+								GetRootScope().settings.progress.products[key].users.total += amount;
+						}
+						$rootScope.addNotification("Added " + amount + "users", 1);
+					});
+			}
+
+
 			this.NextDay = () => {
 				$rootScope.confirm('Are you sure?', `Are you sure you want to skip a day?`, () => {
 					Cheats.SkipADay()
